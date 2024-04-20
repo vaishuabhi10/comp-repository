@@ -1,0 +1,92 @@
+.h1 {
+  color: white;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.textStyle {
+  color: #8d8d8d;
+  font-size: 14px;
+}
+.copyrightStyle {
+  color: #8d8d8d;
+  font-size: 12px;
+}
+.para {
+  color: #8d8d8d;
+  font-size: 14px;
+}
+
+.footerCont {
+  padding: 1rem;
+  background-color: black;
+}
+
+.heading {
+  margin-top: 1rem;
+  margin-bottom: 3px;
+}
+
+.redLine {
+  width: 40px;
+  height: 2px;
+  background-color: #d73134;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.longRedLine {
+  width: 100%;
+  height: 1px;
+  background-color: #d73134;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.smedia {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.icon {
+  border-radius: 2px;
+  width: 30px;
+  height: 30px;
+  /* background-color: #d93134; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 30px;
+  height: 30px;
+  color: #d93134;
+  background-color: black;
+}
+
+ul li {
+  text-decoration: none;
+  color: #8d8d8d;
+  line-height: 2.5rem;
+  font-size: 14px;
+}
+
+.contacts {
+  margin-bottom: 2rem;
+}
+
+.contactsInfo {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.contactsInfo svg {
+  margin-top: 2px;
+}
