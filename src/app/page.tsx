@@ -6,12 +6,21 @@ import Footer from "./Components/Footer";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons/faCircleChevronRight";
+import { RadioGroup } from "./Components/ui/radio-group";
+import { RadioGroupItem } from "./Components/ui/radio-group";
 
 export default function Home() {
   return (
     <>
       <main className="m-4">
         <div className="space-x-4 space-y-4">
+          <Button>Accept Request</Button>
+          <Button>Send</Button>
+          <Button variant={"primaryType1"}>Accepted by me</Button>
+          <Button variant="primaryType1">Pending</Button>
+          <Button variant="primaryType1">Decline</Button>
+          
+
           <Button>Log in</Button>
           <Button>Register Now</Button>
           <Button className="px-9 py-1.5" variant="secondary">
@@ -43,9 +52,26 @@ export default function Home() {
           <Button size="lg" variant="danger">
             Cancel
           </Button>
+          
+          <RadioGroup defaultValue="comfortable">
+            <div className="flex items-center space-x-2">
+                <RadioGroupItem value="default" id="r1" />
+                 <Label htmlFor="r1">Default</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="comfortable" id="r2" />
+              <Button>Comfortable</Button>
+              
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="compact" id="r3" />
+              <Label htmlFor="r3">Compact</Label>
+            </div>
+          </RadioGroup>
         </div>
       </main>
       <Footer />
     </>
   );
 }
+/*htmlFor="r2"*/

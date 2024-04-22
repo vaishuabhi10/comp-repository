@@ -53,7 +53,7 @@ const Footer = () => {
         <li>About</li>
         <li>Tearms & Conditions</li>
         <li>Contact Us</li>
-        <li>FAQ's</li>
+        <li>FAQs</li>
       </ul>
       <section className="contacts">
         <div className="heading">
