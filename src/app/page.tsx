@@ -6,8 +6,8 @@ import Footer from "./Components/Footer";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons/faCircleChevronRight";
-import { RadioGroup } from "./Components/ui/radio-group";
-import { RadioGroupItem } from "./Components/ui/radio-group";
+
+import Radio from "./Components/Radio";
 
 export default function Home() {
   return (
@@ -69,9 +69,16 @@ export default function Home() {
             </div>
           </RadioGroup>
         </div>
+        {/* <div>
+          <Radio name="gender" value="male" variant="default">
+            <label htmlFor="male">Male</label>
+          </Radio>
+        </div>  */}
+        <h1>radio</h1>
+      
       </main>
+      
       <Footer />
     </>
   );
 }
-/*htmlFor="r2"*/
