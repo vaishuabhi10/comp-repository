@@ -14,6 +14,9 @@ const config: Config = {
         buttonRed2: "#EC9597",
         green: "#00801A",
         pink: "#D91046",
+        darkred: "#D93134",
+        darkorange: "#f59c3b",
+        grey1: "#333333",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
