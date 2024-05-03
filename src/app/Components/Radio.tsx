@@ -1,27 +1,45 @@
 import { VariantProps, cva } from "class-variance-authority";
-import React, { InputHTMLAttributes, ReactNode } from "react";
+import React, { ChangeEvent, InputHTMLAttributes, ReactNode, useState } from "react";
 import cn from "../utils/cn";
 
 interface RadioProps 
   extends InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof radioVariant> {
     label?: ReactNode;
+    value?: string;
+    checked: boolean;
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void; 
+    className?: string; 
+    variant?: "type1" | "type2" | "type4" | "type3" | "type5" | "type6" | "type7";
 }
 
 const Radio = ({
     label,
+    value,
+    checked,
+    onChange,
     className,
     variant,
-    size,
     ...props
   }: RadioProps) => {
     console.log("children", label);
-    console.log("cn", cn(radioVariant({ variant, size, className })));
+    console.log("cn", cn(radioVariant({ variant, className })));
+
+    const [isChecked, setIsChecked] = useState<boolean>(checked);
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setIsChecked(!isChecked);
+      onChange(event);
+      console.log("radio button clicked");
+    };
+
     return (
-      <label>
+      <label className={cn(radioVariant({ variant, className }), isChecked && ( variant === 'type6' || variant === 'type7' ) && 'font-bold')}>
         <input
           type="radio"
-          className={cn(radioVariant({ variant, size, className }))}
+          value={value}
+          checked={checked}
+          onChange={handleChange}
           {...props}
         />
         {label}
@@ -32,18 +50,17 @@ const Radio = ({
   const radioVariant = cva("radio", {
     variants: {
       variant: {
-        default: "appearance-none rounded-full border-2 border-gray-300 w-6 h-6 checked:bg-blue-500 checked:border-orange",
-        custom: "appearance-none rounded-full border-2 border-red-500 w-6 h-6 checked:bg-red-500 checked:border-green",
-      },
-      size: {
-        sm: "w-4 h-4",
-        md: "w-6 h-6",
-        lg: "w-8 h-8",
+        type1: "bg-darkred text-white rounded accent-darkred",
+        type2: "bg-darkorange text-white rounded pr-14 pl-16 py-2 accent-darkorange",
+        type3: "accent-darkred text-grey1 py-4 pl-10 pr-56",
+        type4: "accent-black text-black",
+        type5: "accent-darkred text-darkred m-4",
+        type6: "accent-green text-black",
+        type7: "accent-darkred text-black",
       },
     },
     defaultVariants: {
-      variant: "default",
-      size: "md",
+      variant: "type4",
     },
   });
   

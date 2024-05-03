@@ -8,8 +8,20 @@ import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons/faCircleChevronRight";
 
 import Radio from "./Components/Radio";
+import { useState } from "react";
+
 
 export default function Home() {
+
+  const [selectedOption, setSelectedOption] = useState("");
+
+  // const handleOptionChange = (value: string | boolean) => {
+  //   setSelectedOption(value);
+  // };
+
+    const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setSelectedOption(event.target.value);
+    };
   return (
     <>
       <main className="m-4">
@@ -69,15 +81,64 @@ export default function Home() {
             </div>
           </RadioGroup>
         </div>
-        {/* <div>
-          <Radio name="gender" value="male" variant="default">
-            <label htmlFor="male">Male</label>
-          </Radio>
-        </div>  */}
-        <h1>radio</h1>
-      
+        <hr />
+        <div className="m-3">     
+          <div className="space-x-4 space-y-5">
+              <Radio
+              label=" Bride"
+              value="bride"
+              checked={selectedOption === "bride"}
+              onChange={handleOptionChange}
+              variant="type1"
+              className="pr-14 pl-16 py-2 w-4 h-4"
+              />
+              <Radio
+                label=" Groom"
+                value="groom"
+                checked={selectedOption === "groom"}
+                onChange={handleOptionChange}  
+                variant="type2"         
+              />
+              <Radio
+            label=" No"
+            value="no"
+            checked={selectedOption === "no"}
+            onChange={handleOptionChange} 
+            variant="type3"           
+          />       
+          <Radio
+            label=" Accepted"
+            value="accept"
+            checked={selectedOption === "accept"}
+            onChange={handleOptionChange} 
+            variant="type4"
+            className="h-5 w-5"           
+          />
+          <Radio
+            label="  Yes"
+            value="yes"
+            checked={selectedOption === "yes"}
+            onChange={handleOptionChange}
+            variant="type5"
+          />
+          <Radio
+            label=" Doesn't matter"
+            value="matter"
+            checked={selectedOption === "matter"}
+            onChange={handleOptionChange}
+            variant="type6"
+            className="px-11 py-1"
+          />
+          <Radio
+            label=" Click"
+            value="click"
+            checked={selectedOption === "click"}
+            onChange={handleOptionChange}
+            variant="type7"
+          />
+          </div>     
+        </div>     
       </main>
-      
       <Footer />
     </>
   );
