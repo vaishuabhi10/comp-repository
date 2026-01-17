@@ -1,3 +1,3 @@
 # reusable-comp
 Anubandh reusable comp
-insall by vaishnavi
+install by vaishnavi
